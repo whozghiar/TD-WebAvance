@@ -1,5 +1,5 @@
-<div>
-  <div [ngClass]="light.toggle?'bg-yellow-500' : 'bg-black'"
+<div class="flex flex-col justify-center items-center">
+  <div [ngClass]="light.toggle?'bg-red-500' : 'bg-green-600'"
        (click)="light.toggle = !light.toggle"
        class="flex
            justify-center
@@ -12,7 +12,7 @@
            ease-in-out">
 
     <div class="text-white">
-      <h1 class="text-2xl font-bold">{{ light.toggle ? 'ON' : 'OFF' }}</h1>
+      <h1 class="text-2xl font-bold">{{ light.toggle ? 'Allumé' : 'OFF' }}</h1>
     </div>
   </div>
 
