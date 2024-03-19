@@ -1,4 +1,7 @@
-<div class="flex gap-3 p-3" >
-  <div class="h-40 w-40 bg-black"></div>
-  <div class="h-40 w-40 bg-yellow-500"></div>
+<div class="flex gap-3 p-3">
+    <div
+      *ngFor="let light of lightArray"
+      class=" flex flex-col justify-center items-center">
+      <app-light [light]="light"></app-light>
+    </div>
 </div>
