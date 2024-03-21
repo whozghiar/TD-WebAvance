@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {NgClass, NgFor} from "@angular/common";
 import {LightComponent} from "../light/light.component";
+import {LightService} from "../../service/light.service";
 
 @Component({
   selector: 'app-lightpage',
@@ -15,25 +16,11 @@ import {LightComponent} from "../light/light.component";
 })
 export class LightpageComponent {
 
+  constructor(protected lightService: LightService) {
+  }
 
-  lightArray: any[] = [
-    {
-      toggle: false,
-      title: "Salon"
-    },
-    {
-      toggle: false,
-      title: "Cuisine"
-    },
-    {
-      toggle: false,
-      title: "Chambre"
-    },
-    {
-      toggle: false,
-      title: "Salle de bain"
-    }
-  ];
-
-
+  handleRemoveLight(id: number){
+    console.log("Remove light");
+    this.lightService.removeLight(id);
+  }
 }

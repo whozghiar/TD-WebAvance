@@ -1,7 +1,10 @@
 <div class="flex gap-3 p-3">
+    <button class="p-3 bg-green-600 rounded-lg" (click)="lightService.addLight()">
+      Ajouter
+    </button>
     <div
-      *ngFor="let light of lightArray"
+      *ngFor="let light of lightService.getAllLights()"
       class=" flex flex-col justify-center items-center">
-      <app-light [light]="light"></app-light>
+      <app-light [light]="light" (remove)="handleRemoveLight(light.id)"></app-light>
     </div>
 </div>

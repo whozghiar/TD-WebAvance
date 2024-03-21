@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {NgClass} from "@angular/common";
 
 @Component({
@@ -14,9 +14,16 @@ export class LightComponent {
 
   @Input("light")
   light: any = {
+    id:     0,
     toggle:  false,
     title:  "UNKNOWN"
   };
+
+  @Output("remove")
+  remove: EventEmitter<any> = new EventEmitter<any>();
+  launchRemove() {
+    this.remove.emit(this.light.id);
+  }
 
 
   /**

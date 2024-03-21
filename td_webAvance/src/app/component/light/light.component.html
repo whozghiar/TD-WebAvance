@@ -1,5 +1,5 @@
 <div class="flex flex-col justify-center items-center">
-  <div [ngClass]="light.toggle?'bg-red-500' : 'bg-green-600'"
+  <div [ngClass]="light.toggle?'bg-yellow-500' : 'bg-black'"
        (click)="light.toggle = !light.toggle"
        class="flex
            justify-center
@@ -19,5 +19,7 @@
   <div>
     <h1 class="text-2xl">{{ light.title }}</h1>
   </div>
-
+  <div class="p-3 rounded-lg bg-red-500">
+    <button class="text-white" (click)="launchRemove()">Remove</button>
+  </div>
 </div>
