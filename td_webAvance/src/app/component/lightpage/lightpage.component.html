@@ -1,7 +1,12 @@
+<div class="flex flex-col gap-3 p-3">
+  <button class="p-3 bg-blue-300 rounded-lg" (click)="lightService.addLight(light.title)">
+    Ajouter
+  </button>
+  <input class="p-3 rounded-lg bg-blue-100 shadow"
+         placeholder="Entrer un nom de pièce..."
+         [(ngModel)]="light.title">
+</div>
 <div class="flex gap-3 p-3">
-    <button class="p-3 bg-green-600 rounded-lg" (click)="lightService.addLight()">
-      Ajouter
-    </button>
     <div
       *ngFor="let light of lightService.getAllLights()"
       class=" flex flex-col justify-center items-center">

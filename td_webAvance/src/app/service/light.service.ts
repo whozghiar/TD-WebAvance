@@ -41,11 +41,13 @@ export class LightService {
   /**
    * Add a new light to the list
    */
-  addLight(): void {
+  addLight(titre : string): void {
+    titre = titre ? titre : 'Nouvelle pièce';
+
     let light = {
       id: this.nextId,
       toggle: false,
-      title: "Nouvelle pièce"
+      title: titre
     }
     this.lightArray.push(light);
     this.nextId++;

@@ -26,6 +26,8 @@ export class LightComponent {
   }
 
 
+
+
   /**
    * Switch the light on or off
    */

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {NgClass, NgFor} from "@angular/common";
 import {LightComponent} from "../light/light.component";
 import {LightService} from "../../service/light.service";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-lightpage',
@@ -9,7 +10,8 @@ import {LightService} from "../../service/light.service";
   imports: [
     NgClass,
     NgFor,
-    LightComponent
+    LightComponent,
+    FormsModule
   ],
   templateUrl: './lightpage.component.html',
   styleUrl: './lightpage.component.css'
@@ -17,6 +19,11 @@ import {LightService} from "../../service/light.service";
 export class LightpageComponent {
 
   constructor(protected lightService: LightService) {
+  }
+
+  light: any = {
+    title :"",
+    color : "",
   }
 
   handleRemoveLight(id: number){
